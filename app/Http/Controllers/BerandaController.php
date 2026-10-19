@@ -18,7 +18,6 @@ class BerandaController extends Controller
             'versiMysql' => $versiMysql,
             'namaDatabase' => DB::getDatabaseName(),
             'waktu' => now()->translatedFormat('l, d F Y H:i'),
-            'pesan' => '<script>alert("Halo saya choky");</script>',
         ]);
     }
 }

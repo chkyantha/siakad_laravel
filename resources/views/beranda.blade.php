@@ -14,8 +14,7 @@
         <tr><th align="left">PHP</th><td>{{ $versiPhp }}</td></tr>
         <tr><th align="left">MySQL</th><td>{{ $versiMysql }}</td></tr>
         <tr><th align="left">Database</th><td>{{ $namaDatabase }}</td></tr>
-    <p>Menggunakan kurung kurawal ganda</p>
-    {{ $pesan }}
+
     </table>
 
 </body>
