@@ -8,7 +8,7 @@
 
     <div class="row g-3 mb-4">
         @foreach ($statistik as $item)
-            <div class="col-xl-3">
+            <div class="col-12 col-sm-6 col-md-4 col-xl">
                 <x-stat-card :judul="$item['judul']" :jumlah="$item['jumlah']"
                     :ikon="$item['ikon']" :warna="$item['warna']" />
             </div>
@@ -44,6 +44,19 @@
                         </div>
                     @endforeach
                 </div>
+                @push('scripts')
+                <script>
+                    document.getElementById('themeToggle').addEventListener('click', function () {
+                        const html = document.documentElement;
+                        const currentTheme = html.getAttribute('data-bs-theme');
+                        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                        html.setAttribute('data-bs-theme', newTheme);
+                        this.innerHTML = newTheme === 'dark' 
+                            ? '<i class="bi bi-sun-fill"></i> Mode Light' 
+                            : '<i class="bi bi-moon-stars-fill"></i> Mode Dark';
+                    });
+                </script>
+                @endpush
             </div>
         </div>
     </div>

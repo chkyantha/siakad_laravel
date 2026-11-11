@@ -16,7 +16,12 @@
                     <td>{{ $loop->iteration }}</td>
                     @foreach ($kolom as $kunci => $judul)
                         <td>
-                            @if ($kunci === 'status')
+                            @if ($kunci === 'nim')
+                                {{-- Menautkan NIM ke route mahasiswa.show --}}
+                                <a href="{{ route('mahasiswa.show', $item['nim']) }}" class="text-decoration-none fw-semibold">
+                                    {{ $item[$kunci] }}
+                                </a>
+                            @elseif ($kunci === 'status')
                                 @php
                                     $warna = match ($item[$kunci]) {
                                         'Aktif', 'Disetujui' => 'success',
